@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module mux_wb(
 	input mem_to_reg_wb,

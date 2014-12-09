@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module control_unit(
 	input [5 : 0] funct,
@@ -20,11 +20,7 @@ module control_unit(
 		
 		case (op_code)
 			ROP: begin
-				if (funct == ADD)
-					reg_dst_d = 2'b01;
-				else
-					reg_dst_d = 2'b00;
-
+				reg_dst_d = 2'b00;
 				alu_src_d = 1'b0;
 				mem_to_reg_d = 2'b00;
 				reg_write_d = 1'b1;

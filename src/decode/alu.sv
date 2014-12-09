@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module alu(
 	input reg [PC_BITS - 1 : 0] src_a_e,

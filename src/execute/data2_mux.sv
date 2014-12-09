@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module data2_mux(
 	input wire forward_a_e,

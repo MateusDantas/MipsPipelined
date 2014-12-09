@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module reg_mux(
 	input reg reg_dst_e, 

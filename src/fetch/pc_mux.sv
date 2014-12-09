@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module pc_mux(
 	input [PC_BITS - 1 : 0] pc_plus_4, 

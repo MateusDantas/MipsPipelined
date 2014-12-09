@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module pc_branch_add(
 	input wire [PC_BITS - 1 : 0] sign_imm, 

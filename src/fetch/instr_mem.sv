@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 
 module instr_mem(input clk, input [PC_BITS - 1 : 0] adress, output reg [PC_BITS - 1 : 0] data_out);

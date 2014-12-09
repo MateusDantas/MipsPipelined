@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module jump_adress(
 	input [25 : 0] instr_d,

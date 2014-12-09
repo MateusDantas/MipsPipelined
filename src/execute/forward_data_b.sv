@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module forward_data_b(
 	input [PC_BITS - 1 : 0] read_data_2_e,

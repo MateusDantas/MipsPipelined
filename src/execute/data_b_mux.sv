@@ -1,4 +1,4 @@
-`include "CPU_def.sv"
+`include "../CPU_def.sv"
 
 module data_b_mux(
 	input reg [PC_BITS - 1 : 0] write_data_e,
