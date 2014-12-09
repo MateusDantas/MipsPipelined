@@ -21,9 +21,9 @@ module control_unit(
 		case (op_code)
 			ROP: begin
 				if (funct == ADD)
-					reg_dst_d <= 1'b1;
+					reg_dst_d <= 2'b01;
 				else
-					reg_dst_d <= 1'b0;
+					reg_dst_d <= 2'b00;
 
 				alu_src_d <= 1'b0;
 				mem_to_reg_d <= 2'b00;

@@ -1,3 +1,4 @@
+`include "CPU_def.sv"
 
 module reg_decode_exec(
 	input clk,
@@ -10,6 +11,12 @@ module reg_decode_exec(
 	input reg alu_control_d,
 	input reg alu_src_d,
 	input reg reg_dst_d,
+
+	input logic [PC_BITS - 1 : 0] read_data_1_d,
+	input logic [PC_BITS - 1 : 0] read_data_2_d,
+
+	output logic [PC_BITS - 1 : 0] read_data_1_e,
+	output logic [PC_BITS - 1 : 0] read_data_2_e, 
 
 	input [PC_BITS - 1 : 0] pc_plus_4d,
 	
@@ -45,11 +52,13 @@ module reg_decode_exec(
 			branch_e <= 1'b0;
 			alu_control_e <= 2'b00;
 			jump_e <= 1'b0;
-			rs_e <= 32'b0;
-			rt_e <= 32'b0;
-			rd_e <= 32'b0;
+			rs_e <= 5'b0;
+			rt_e <= 5'b0;
+			rd_e <= 5'b0;
 			pc_plus_4e <= 32'b0;
 			sign_imm_e <= 32'b0;
+			read_data_1_e <= 0;
+			read_data_2_e <= 0;	
 		end
 		else if (~stall_e) begin
 			reg_dst_e <= reg_dst_d;
@@ -65,6 +74,8 @@ module reg_decode_exec(
 			rd_e <= rd_d;
 			pc_plus_4e <= pc_plus_4d;
 			sign_imm_e <= sign_imm_d;
+			read_data_1_e <= read_data_1_d;
+			read_data_2_e <= read_data_2_d;
 		end
 	end
 
