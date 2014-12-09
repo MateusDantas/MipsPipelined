@@ -3,7 +3,6 @@
 module reg_mem_wb(
 	input clk,
 	input rst,
-	input stall_w,
 
 	input reg reg_write_m,
 	input reg mem_to_reg_m,
@@ -37,7 +36,7 @@ module reg_mem_wb(
 			write_reg_wb <= 5'b0;
 			pc_plus_4wb <= 0;
 		end
-		else if (stall_w) begin
+		else begin
 			reg_write_wb <= reg_write_m;
 			mem_to_reg_wb <= mem_to_reg_m;
 			read_data_wb <= read_data_m;

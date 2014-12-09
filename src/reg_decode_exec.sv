@@ -2,7 +2,6 @@
 
 module reg_decode_exec(
 	input clk,
-	input stall_e,
 	input flush_e,
 	
 	input reg reg_write_d,
@@ -60,7 +59,7 @@ module reg_decode_exec(
 			read_data_1_e <= 0;
 			read_data_2_e <= 0;	
 		end
-		else if (~stall_e) begin
+		else begin
 			reg_dst_e <= reg_dst_d;
 			alu_src_e <= alu_src_d;
 			mem_to_reg_e <= mem_to_reg_d;

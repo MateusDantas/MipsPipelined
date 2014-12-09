@@ -4,7 +4,6 @@ module reg_exec_mem(
 
 	input clk,
 	input clr,
-	input stall_m,
 	
 	input reg reg_write_e,
 	input reg mem_to_reg_e,
@@ -39,7 +38,7 @@ module reg_exec_mem(
 			write_data_m <= 32'b0;
 			write_reg_m <= 5'b0;
 			pc_plus_4m <= 0;
-		else if (~stall_m) begin
+		else begin
 			mem_to_reg_m <= mem_to_reg_e;
 			reg_write_m <= reg_write_e;
 			mem_write_m <= mem_write_e;
