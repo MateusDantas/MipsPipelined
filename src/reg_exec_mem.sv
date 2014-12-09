@@ -14,11 +14,15 @@ module reg_exec_mem(
 
 	input reg [PC_BITS - 1 : 0] write_data_e,
 
+	input pc_plus_4e,
+
 	input write_reg_e,
 
 	output reg reg_write_m,
 	output reg mem_to_reg_m,
 	output reg mem_write_m,
+
+	output pc_plus_4m,
 
 	output reg [PC_BITS - 1 : 0] alu_out_m,
 	output reg [PC_BITS - 1 : 0] write_data_m,
@@ -34,6 +38,7 @@ module reg_exec_mem(
 			alu_out_m <= 32'b0;
 			write_data_m <= 32'b0;
 			write_reg_m <= 5'b0;
+			pc_plus_4m <= 0;
 		else if (~stall_m) begin
 			mem_to_reg_m <= mem_to_reg_e;
 			reg_write_m <= reg_write_e;
@@ -41,6 +46,7 @@ module reg_exec_mem(
 			alu_out_m <= alu_out_e;
 			write_data_m <= write_data_e;
 			write_reg_m <= write_reg_e;
+			pc_plus_4m <= pc_plus_4e;
 		end
 	end
 

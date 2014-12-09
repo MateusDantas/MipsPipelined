@@ -6,14 +6,14 @@ module data_mux(
 
 	input logic [PC_BITS - 1 : 0] alu_out_m,
 
-	input wire forward_a,
-	input wire forward_b,
+	input wire forward_a_d,
+	input wire forward_b_d,
 
 	output wire equal_d
 );
 
 	always_comb begin
-		equal_d = ((forward_a ? alu_out_m : read_data_1) == (forward_b ? alu_out_m : read_data_2));
+		equal_d = ((forward_a_d ? alu_out_m : read_data_1) == (forward_b_d ? alu_out_m : read_data_2));
 	end
 
 endmodule
