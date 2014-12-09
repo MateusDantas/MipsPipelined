@@ -11,11 +11,11 @@ module mux_wb(
 	
 	always_comb begin
 		if (mem_to_reg_wb == 2'b00)
-			result_w <= read_data_wb;
+			result_w = read_data_wb;
 		else if (mem_to_reg_wb == 2'b01)
-			result_w <= alu_out_wb;
+			result_w = alu_out_wb;
 		else
-			result_w <= pc_plus_4wb;
+			result_w = pc_plus_4wb;
 	end
 
 endmodule

@@ -12,11 +12,11 @@ module forward_data_b(
 
 	always_comb begin
 		if (forward_b_e == 2'b00)
-			write_data_e <= read_data_2_e;
+			write_data_e = read_data_2_e;
 		else if (forward_b_e == 2'b01)
-			write_data_e <= result_w;
+			write_data_e = result_w;
 		else
-			write_data_e <= alu_out_m;
+			write_data_e = alu_out_m;
 	end
 
 endmodule

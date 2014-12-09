@@ -13,7 +13,7 @@ module data_memory(
 
 	reg [PC_BITS - 1 : 0] main_memory [0 : SIZE_MEMORY - 1];
 	always_comb begin
-		read_data_m <= main_memory[alu_out_m];
+		read_data_m = main_memory[alu_out_m];
 	end
 	
 	always @(posedge clk, posedge rst) begin

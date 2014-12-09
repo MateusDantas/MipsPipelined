@@ -11,9 +11,9 @@ module data_b_mux(
 
 	always_comb begin
 		if (alu_src_e == 1'b0)
-			src_b_e <= write_data_e;
+			src_b_e = write_data_e;
 		else
-			src_b_e <= sign_imm_e;
+			src_b_e = sign_imm_e;
 	end
 
 endmodule
